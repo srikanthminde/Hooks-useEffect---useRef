@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    </head>
+    <body>
+        <div id="root"></div>
+        <script type="text/babel">
+            function Child(props){
+                return(
+                    <div style={{border:"2px solid",padding:"5px",color:"green"}}>
+                        <h2 style={{color:"black"}}>Fisrt Componet:100</h2><br/>
+                        <div style={{border:"2px solid",padding:"5px",color:"lightblue"}} >
+                            <h2 style={{color:"black"}}> How Are You Praveen</h2>    
+                            <h2 style={{color:"black"}}> Second Component:100</h2>  
+                            <div style={{border:"2px solid",padding:"10px",margin:"10px",color:"blue"}}>
+                            <h2 style={{color:"black"}}>Hi Praveen Gubbala</h2> 
+                            <h2 style={{color:"black"}}> Third Component:100</h2>  
+                            <button onClick={props.abc}>Say Hi</button> 
+                            </div>      
+                        </div>
+                       
+                    </div>
+                ) 
+            }
+            function greeting(){
+                    alert("hii")
+                }
+
+            function Second(){
+                    return(
+                        <div style={{border:"2px solid",padding:"5px",color:"lightblue",margin:"15px"}}>
+                          
+                        </div>
+                    )
+                }
+                 function Pqr(){
+                    return (
+                        <div style={{border:"2px solid",padding:"10px",margin:"10px",color:"gray"}}>
+                        <h2 style={{color:"black"}}> Fourth </h2>    
+                        <h2 style={{color:"black"}}>Praveen </h2>    
+                        </div>
+                    )
+                 }
+             function Parent(){
+                return(
+                    <div style={{border:"2px solid",padding:"10px",margin:"10px"}}>
+                 
+                    <Child abc={greeting}></Child> 
+                    <Pqr></Pqr> 
+                    </div>
+                )
+             }
+             ReactDOM.render(<Parent></Parent>,document.getElementById("root"))
+        </script>
+    </body>
+</html>

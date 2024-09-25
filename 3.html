@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    </head>
+    <body>
+        <div id="root"></div>
+        <script type="text/babel">
+            function Abc(){
+                var firstNameRef=React.useRef('')
+                var lastNameRef=React.useRef('')
+                var housRef=React.useRef('')
+                var phRef=React.useRef('');
+                React.useEffect(()=>{
+                     firstNameRef.current.focus()
+                },[])
+                    function handleFirstName(e){
+                        if(e.key==="Enter"){
+                            lastNameRef.current.focus()
+                        }
+                    }
+                    function handleLastName(e)
+                    {
+                        if(e.key==="Enter"){
+                            housRef.current.focus()
+
+                        }
+                    }
+                    function handleHouse(e)
+                    {
+                        if(e.key==="Enter"){
+                            phRef.current.focus()
+                        }
+                    }   
+                       function handlePh(e)
+                       {
+                        if(e.key==='Enter'){
+                            firstNameRef.current.focus();
+                        }
+                     }
+                     
+                    
+                    return(
+                        <div>
+                            
+                        <input type="text" ref={firstNameRef} onKeyUp={(ev)=>{handleFirstName(ev)}} placeholder="firstname"/>
+                        <input type="text" ref={lastNameRef} onKeyUp={(ev)=>{handleLastName(ev)}} placeholder="lastname"/>
+                        <input type="text" ref={housRef} onKeyUp={(ev)=>{handleHouse(ev)}} placeholder="House"/>
+                        <input type="text" ref={phRef} onKeyUp={(ev)=>{handlePh(ev)}} placeholder="Ph"/>
+                        </div>
+                    ) 
+                }
+            
+            
+            ReactDOM.render(<Abc></Abc>,document.getElementById("root"))
+        </script>
+    </body>
+</html>

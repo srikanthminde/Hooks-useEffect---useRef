@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    </head>
+    <body>
+        <div id="root"></div>
+        <script type="text/babel">
+            function Abc(){
+                var firstnameRef=React.useRef('')
+                var lastnameRef=React.useRef('')
+                var houseRef=React.useRef('')
+                React.useEffect(()=>{
+                    firstnameRef.current.focus();
+                },[])
+                
+                function handlefirstname(e){
+                    if(e.key==="Enter"){
+                        lastnameRef.current.focus()
+                    }
+                }
+                function handlelastname(e){
+                    if(e.key==="Enter"){
+                        houseRef.current.focus()
+                    }
+                }
+                 function handlehouse(e){
+                    if(e.key==="Enter"){
+                        firstnameRef.current.focus()
+                    }
+                 }
+                return(
+                    <div>
+                    
+                        <input type="text" ref={firstnameRef}onKeyUp={(ev)=>{handlefirstname(ev)}}placeholder="firstname"/>
+                        <input type="text" ref={lastnameRef} onKeyUp={(ev)=>{handlelastname(ev)}} placeholder="lastname"/>  
+                        <input type="text" ref={houseRef} onKeyUp={(ev)=>{handlehouse(ev)}} placeholder="house"/>  
+                    </div>
+                )
+            }
+            ReactDOM.render(<Abc></Abc>,document.getElementById("root"))
+        </script>
+    </body>
+</html>
